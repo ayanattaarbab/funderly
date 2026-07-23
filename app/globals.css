@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --font-outfit: var(--font-outfit-next);
+  --font-jakarta: var(--font-jakarta-next);
+}
+
+@layer base {
+  body {
+    @apply bg-[#F8FAFC] text-[#0F172A] antialiased;
+  }
+}
+
+.slim-scroll {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.slim-scroll::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}

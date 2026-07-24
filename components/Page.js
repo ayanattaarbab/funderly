@@ -922,19 +922,28 @@ const handleShare = () => {
         </div>
       </div>
 
-    <div className="pt-2 pb-32 md:pb-16 flex justify-center items-center w-full animate-fade-up">
+      <div className="pt-2 pb-32 md:pb-16 flex justify-center items-center w-full animate-fade-up">
         <Link 
           href="/" 
-          className="group flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-transparent hover:bg-white hover:border-indigo-100 hover:shadow-xl hover:shadow-indigo-600/10 hover:-translate-y-1 active:translate-y-0 active:scale-95 transition-all duration-300 ease-out"
+          className="group flex items-center gap-3"
         >
-           <span className="text-sm font-bold text-slate-500 transition-colors">
-             Powered by
+           {/* Sleek, spaced-out intro text */}
+           <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-[0.2em] transition-colors duration-500 group-hover:text-indigo-400">
+             POWERED BY
            </span>
-           <div className="flex items-center gap-1.5">
-             <IconHeartHands className="w-5 h-5 text-indigo-600 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]" />
-             <span className="text-base font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 tracking-tight">
+
+           {/* The Main Brand Lockup */}
+           <div className="relative flex items-center gap-1.5">
+             {/* Spring-animated floating icon */}
+             <IconHeartHands className="w-5 h-6 text-indigo-600 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-125 group-hover:-translate-y-1 group-hover:drop-shadow-[0_4px_6px_rgba(79,70,229,0.3)]" />
+             
+             {/* Brand Name */}
+             <span className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 tracking-tight">
                Funderly
              </span>
+
+             {/* Elegant Expanding Underline */}
+             <span className="absolute -bottom-1 left-0 w-0 h-[2.5px] bg-gradient-to-r from-indigo-600 to-purple-600 transition-all duration-400 ease-out group-hover:w-full rounded-full opacity-0 group-hover:opacity-100" />
            </div>
         </Link>
       </div>

@@ -686,14 +686,17 @@ export default function CreatorProfile({ creator }) {
     supportRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const handleShare = () => {
+const handleShare = () => {
+    const baseUrl =
+      process.env.NEXT_PUBLIC_SITE_URL ||
+      (typeof window !== 'undefined' ? window.location.origin : 'https://funderly.com');
+    const fullUrl = `${baseUrl.replace(/\/$/, '')}/${creator.username}`;
     if (typeof navigator !== 'undefined' && navigator.clipboard) {
-      navigator.clipboard.writeText(`funderly.com/${creator.username}`).catch(() => {});
+      navigator.clipboard.writeText(fullUrl).catch(() => {});
     }
     setCopied(true);
     setTimeout(() => setCopied(false), 1600);
   };
-
   const dismissOverlay = () => {
     const wasFailed = resultOverlay?.status === 'failed';
     setResultOverlay(null);

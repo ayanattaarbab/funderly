@@ -921,34 +921,24 @@ const handleShare = () => {
           </div>
         </div>
       </div>
-
       <div className="pt-2 pb-32 md:pb-16 flex justify-center items-center w-full animate-fade-up">
         <Link 
           href="/" 
           className="group flex items-center gap-3"
         >
-           {/* Sleek, spaced-out intro text */}
            <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-[0.2em] transition-colors duration-500 group-hover:text-indigo-400">
              POWERED BY
            </span>
-
-           {/* The Main Brand Lockup */}
            <div className="relative flex items-center gap-1.5">
-             {/* Spring-animated floating icon */}
-             <IconHeartHands className="w-5 h-6 text-indigo-600 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-125 group-hover:-translate-y-1 group-hover:drop-shadow-[0_4px_6px_rgba(79,70,229,0.3)]" />
-             
-             {/* Brand Name */}
+             <IconHeartHands className="w-5 h-5 text-indigo-600" />
              <span className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 tracking-tight">
                Funderly
              </span>
-
-             {/* Elegant Expanding Underline */}
              <span className="absolute -bottom-1 left-0 w-0 h-[2.5px] bg-gradient-to-r from-indigo-600 to-purple-600 transition-all duration-400 ease-out group-hover:w-full rounded-full opacity-0 group-hover:opacity-100" />
            </div>
         </Link>
       </div>
 
-      {/* Sticky footer tracking panel for smaller displays */}
       <div className="md:hidden fixed bottom-0 inset-x-0 z-30 glass-card border-t border-slate-200 px-5 py-3 flex items-center justify-between shadow-[0_-8px_24px_rgba(15,23,42,0.06)]">
         <div>
           <p className="text-xs font-bold text-slate-900">{creator.name}</p>

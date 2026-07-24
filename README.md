@@ -34,7 +34,7 @@ Use this dummy card to test the support flow end-to-end:
 - **UI** — [React 19](https://react.dev/)
 - **Styling** — [Tailwind CSS v4](https://tailwindcss.com/)
 - **Database** — [MongoDB](https://www.mongodb.com/) via [Mongoose](https://mongoosejs.com/)
-- **Auth** — [NextAuth v5](https://next-auth.js.org/) (GitHub, Google, Facebook)
+- **Auth** — [Auth.js](https://authjs.dev/) v5 (GitHub, Google, Facebook)
 - **Payments** — [Safepay](https://getsafepay.pk/) (`@sfpy/node-core`)
 - **Media** — [Cloudinary](https://cloudinary.com/) (signed uploads)
 - **Validation** — [Zod](https://zod.dev/)

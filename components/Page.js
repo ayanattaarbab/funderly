@@ -752,32 +752,6 @@ const handleShare = () => {
             <div className="w-full h-full bg-gradient-to-br from-indigo-100 to-purple-100" />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-[#F8FAFC] via-black/10 to-black/35" />
-
-          {/* Top-Left Corner Glassmorphic Badge */}
-          <div className="absolute top-0 left-0 z-30 bg-white px-4 py-2.5 sm:px-5 sm:py-3 flex items-center">
-            <Link
-              href="/"
-              className="group flex items-center gap-2.5 transition-transform duration-300"
-            >
-              <span className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 shrink-0">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full drop-shadow-sm">
-                  <path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17" />
-                  <path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9" />
-                  <path d="m2 16 6 6" />
-                  <circle cx="16" cy="9" r="2.9" />
-                  <circle cx="6" cy="5" r="3" />
-                </svg>
-              </span>
-              <div className="flex flex-col leading-none">
-                <span className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest text-slate-500 mb-0.5">
-                  POWERED BY
-                </span>
-                <span className="text-sm sm:text-base font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
-                  Funderly
-                </span>
-              </div>
-            </Link>
-          </div>
         </div>
 
         <div className="relative max-w-5xl mx-auto px-5 sm:px-6">
@@ -946,6 +920,18 @@ const handleShare = () => {
             </Reveal>
           </div>
         </div>
+      </div>
+{/* NEW: Minimalist Funderly Footer Branding */}
+      <div className="pt-2 pb-32 md:pb-16 flex justify-center items-center w-full animate-fade-up">
+        <Link 
+          href="/" 
+          className="group flex items-center gap-2 px-5 py-2.5 rounded-full hover:bg-slate-200/50 active:bg-slate-200/70 transition-all duration-300"
+        >
+           <IconHeartHands className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition-colors duration-300" />
+           <span className="text-xs font-bold text-slate-400 group-hover:text-slate-600 transition-colors tracking-wide">
+             Powered by <span className="font-black text-slate-400 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 transition-all duration-300">Funderly</span>
+           </span>
+        </Link>
       </div>
 
       {/* Sticky footer tracking panel for smaller displays */}

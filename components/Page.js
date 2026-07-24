@@ -922,16 +922,16 @@ const handleShare = () => {
         </div>
       </div>
 
-<div className="pt-2 pb-32 md:pb-16 flex justify-center items-center w-full animate-fade-up">
+    <div className="pt-2 pb-32 md:pb-16 flex justify-center items-center w-full animate-fade-up">
         <Link 
           href="/" 
-          className="flex items-center gap-2.5 px-6 py-3 rounded-full hover:bg-slate-200/50 active:scale-95 transition-all duration-300"
+          className="group flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-transparent hover:bg-white hover:border-indigo-100 hover:shadow-xl hover:shadow-indigo-600/10 hover:-translate-y-1 active:translate-y-0 active:scale-95 transition-all duration-300 ease-out"
         >
-           <span className="text-sm font-bold text-slate-500 tracking-wide">
+           <span className="text-sm font-bold text-slate-500 transition-colors">
              Powered by
            </span>
            <div className="flex items-center gap-1.5">
-             <IconHeartHands className="w-5 h-5 text-indigo-600" />
+             <IconHeartHands className="w-5 h-5 text-indigo-600 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]" />
              <span className="text-base font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 tracking-tight">
                Funderly
              </span>

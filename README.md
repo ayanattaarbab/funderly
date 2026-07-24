@@ -57,7 +57,7 @@ No icon library — all icons are inline SVGs to keep the bundle lean.
 **1. Clone the repo**
 
 ```bash
-git clone https://github.com/yourusername/funderly.git
+git clone https://github.com/ayanattaarbab/funderly.git
 cd funderly
 ```
 

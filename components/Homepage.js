@@ -151,7 +151,9 @@ export default function Page() {
           </div>
           <div className="lg:col-span-5">
             <div className="w-full bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 p-2.5 rounded-2xl flex items-center focus-within:border-indigo-500/70 focus-within:ring-4 focus-within:ring-indigo-500/10 transition-all shadow-2xl shadow-black/40">
-              <span className="pl-4 text-slate-500 font-bold text-sm tracking-tight select-none">funderly.com/</span>
+              <span className="pl-4 text-slate-500 font-bold text-sm tracking-tight select-none">
+                {process.env.NEXT_PUBLIC_SITE_URL ? process.env.NEXT_PUBLIC_SITE_URL.replace(/^https?:\/\//, '').replace(/\/$/, '') : 'funderly.com'}/
+              </span>
               <input type="text" placeholder="username" className="bg-transparent border-none outline-none text-white font-semibold text-sm py-2 px-2 w-full placeholder:text-slate-600 focus:ring-0" />
               <button onClick={() => router.push('/create')} className="group relative bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm px-6 py-3 rounded-xl transition-all shrink-0 cursor-pointer overflow-hidden shadow-lg shadow-indigo-600/20 active:scale-95">
                 <span className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />

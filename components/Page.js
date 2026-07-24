@@ -921,16 +921,21 @@ const handleShare = () => {
           </div>
         </div>
       </div>
-{/* NEW: Minimalist Funderly Footer Branding */}
-      <div className="pt-2 pb-32 md:pb-16 flex justify-center items-center w-full animate-fade-up">
+
+<div className="pt-2 pb-32 md:pb-16 flex justify-center items-center w-full animate-fade-up">
         <Link 
           href="/" 
-          className="group flex items-center gap-2 px-5 py-2.5 rounded-full hover:bg-slate-200/50 active:bg-slate-200/70 transition-all duration-300"
+          className="flex items-center gap-2.5 px-6 py-3 rounded-full hover:bg-slate-200/50 active:scale-95 transition-all duration-300"
         >
-           <IconHeartHands className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition-colors duration-300" />
-           <span className="text-xs font-bold text-slate-400 group-hover:text-slate-600 transition-colors tracking-wide">
-             Powered by <span className="font-black text-slate-400 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 transition-all duration-300">Funderly</span>
+           <span className="text-sm font-bold text-slate-500 tracking-wide">
+             Powered by
            </span>
+           <div className="flex items-center gap-1.5">
+             <IconHeartHands className="w-5 h-5 text-indigo-600" />
+             <span className="text-base font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 tracking-tight">
+               Funderly
+             </span>
+           </div>
         </Link>
       </div>
 

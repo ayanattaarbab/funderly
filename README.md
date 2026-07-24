@@ -117,4 +117,4 @@ Contributions are welcome, whether it's a bug fix, a new feature, or a docs impr
 3. Test payment flows against Safepay's sandbox before submitting
 4. Commit, push, and open a pull request with a clear description of what changed and why
 
-🐛 **Found a bug?** Open an [issue](https://github.com/yourusername/funderly/issues) with steps to reproduce it — screenshots or a short clip help a lot.
+🐛 **Found a bug?** Open an [issue](https://github.com/ayanattaarbab/funderly/issues) with steps to reproduce it — screenshots or a short clip help a lot.

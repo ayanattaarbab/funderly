@@ -197,6 +197,7 @@ const Toast = ({ message }) => (
 function profileFromCreator(creator) {
   const c = creator || {};
   return {
+   email: c.userId || '',
     name: c.name || '',
     username: c.username || '',
     role: c.role || '',

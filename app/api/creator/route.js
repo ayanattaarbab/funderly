@@ -8,13 +8,13 @@ import { v2 as cloudinary } from 'cloudinary';
 cloudinary.config(process.env.CLOUDINARY_URL);
 
 const REQUIRED_FIELDS = [
-  'name', 
-  'username', 
-  'role', 
-  'bio', 
-  'country', 
+  'name',
+  'username',
+  'role',
+  'bio',
+  'country',
   'language',
-  'safepayPublicKey', 
+  'safepayPublicKey',
   'safepaySecretKey'
 ];
 
@@ -29,14 +29,11 @@ export async function POST(req) {
 
   const session = await auth();
   
-
   // Derive userId: prefer authenticated session, else accept explicit body fields
   const userId = session?.user?.id || session?.user?.email || data.userId || data.userEmail || null;
 
   if (!userId) {
     // No session and no provided identifier — fall back to creating an anonymous id
-    // This allows local/dev flows where cookies may not be present (quick unlock for debugging).
-    // Warning: in production you should require authentication.
     const anonId = `anon_${Date.now()}`;
     console.warn('[POST /api/creator] no session or user identifier provided — using anonymous id', anonId);
     data.userId = anonId;
@@ -56,7 +53,6 @@ export async function POST(req) {
     const existingCreator = await Creator.findOne({ userId: data.userId });
 
     // Handle Deletion for Avatar
-    // Only delete if the new avatar is different AND the old one had a Cloudinary Public ID
     if (data.avatarPublicId && existingCreator?.avatarPublicId && data.avatarPublicId !== existingCreator.avatarPublicId) {
       try {
         await cloudinary.uploader.destroy(existingCreator.avatarPublicId);
@@ -66,7 +62,6 @@ export async function POST(req) {
     }
 
     // Handle Deletion for Cover
-    // Only delete if the new cover is different AND the old one had a Cloudinary Public ID
     if (data.coverPublicId && existingCreator?.coverPublicId && data.coverPublicId !== existingCreator.coverPublicId) {
       try {
         await cloudinary.uploader.destroy(existingCreator.coverPublicId);
@@ -77,8 +72,8 @@ export async function POST(req) {
 
     // Update the profile
     const savedProfile = await Creator.findOneAndUpdate(
-      { userId },
-      { $set: { ...data, userId } },
+      { userId: data.userId },
+      { $set: { ...data, userId: data.userId } },
       { returnDocument: 'after', upsert: true, runValidators: true }
     );
 
@@ -120,14 +115,12 @@ export async function DELETE(req) {
   try {
     await connectDB();
 
-    // Find the creator first so we can clean up Cloudinary assets if needed
     const existingCreator = await Creator.findOne({ userId });
 
     if (!existingCreator) {
       return NextResponse.json({ error: 'Creator account not found' }, { status: 404 });
     }
 
-    // Optional: Delete associated Cloudinary images (avatar/cover) upon account destruction
     if (existingCreator.avatarPublicId) {
       try {
         await cloudinary.uploader.destroy(existingCreator.avatarPublicId);
@@ -144,7 +137,6 @@ export async function DELETE(req) {
       }
     }
 
-    // Delete the creator document from MongoDB using the correct userId filter
     await Creator.findOneAndDelete({ userId });
 
     return NextResponse.json({ success: true, message: 'Account deleted successfully' }, { status: 200 });
